@@ -1,0 +1,232 @@
+/* manrope-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/manrope-v15-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* manrope-500 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/manrope-v15-latin-500.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* manrope-700 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/manrope-v15-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+    --GrayishBlue: hsl(212, 23%, 69%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+    --White: hsl(0, 0%, 100%);
+    --ff: 'Manrope', sans-serif;
+    --ff-base-size: 0.8125rem;
+    --ff-h1-size: 1rem;
+    --ff-standart-text: 500;
+    --ff-bold-text: 700;
+}
+
+body {
+    font-family: var(--ff);
+    font-size: var(--ff-base-size);
+    background-color: var(--LightGrayishBlue);
+    font-weight: var(--ff-standart-text);
+    color: var(--VeryDarkGrayishBlue);
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 20.43rem;
+    border-radius: 0.625rem;
+    background-color: var(--White);
+    overflow: hidden;
+    box-shadow: 0 2.5rem 2.5rem -0.625rem var(--LightGrayishBlue);
+}
+
+.card__image img {
+    overflow: hidden;
+    height: 100%;
+}
+
+.card__section-text {
+    padding-top: 2.25rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.card__title {
+    font-size: var(--ff-h1-size);
+    line-height: 1.5rem;
+    letter-spacing: .0125rem;
+    font-weight: var(--ff-bold-text);
+    margin-bottom: .75rem;
+}
+
+.card__description {
+    line-height: 1.25rem;
+    letter-spacing: .0075rem;
+    margin-bottom: 2rem;
+    color: var(--GrayishBlue)
+}
+
+.card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.25rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    width: 100%;
+    position: relative;
+}
+
+.card__author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__author--avatar {
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+    border-radius: 100%;
+}
+
+.card__author--text {
+    margin-left: 1rem;
+}
+
+.card__author--name {
+    font-weight: var(--ff-bold-text);
+}
+
+.card__author--date {
+    color: var(--GrayishBlue)
+}
+
+.card__share-button {
+    border: 0;
+    border-radius: 50%;
+    min-width: 2rem;
+    min-height: 2rem;
+    background-color: var(--LightGrayishBlue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    z-index: 999;
+}
+
+.card__social.hidden {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+.card__share-button.active {
+    background-color: var(--DesaturatedDarkBlue);
+}
+
+.card__social {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--VeryDarkGrayishBlue);
+    left: 0;
+    right: 0;
+    height: 5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.card__social p {
+    color: var(--GrayishBlue);
+    line-height: 1.25rem;
+    letter-spacing: .3125rem;
+    margin-right: 1.3125rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (min-width:64.0625rem) {
+    .card {
+        flex-direction: row;
+        max-width: 45.625rem;
+        overflow: visible;
+    }
+    .card__image img {
+        border-bottom-left-radius: 0.625rem;
+        border-top-left-radius: 0.625rem;
+    }
+
+    .card__section-text {
+        padding: 2rem 2.5rem 0 2.5rem;
+    }
+
+    .card__title {
+        font-size: 1.25rem;
+    }
+
+    .card__footer {
+        padding: 0 2.5rem 2rem 2.5rem;
+    }
+
+    .card__social {
+        border-radius: 0.625rem;
+        left: inherit;
+        top: -72px;
+        right: -59px;
+        height: 55px;
+        box-shadow: 0 2.5rem 2.5rem -0.625rem var(--LightGrayishBlue);
+    }
+
+    .card__social::after {
+        position: absolute;
+        content: '';
+        background: var(--VeryDarkGrayishBlue);
+        top: 49px;
+        right: 109.725px;
+        height: 12px;
+        width: 12px;
+        transform: rotate(45deg);
+    }
+}
